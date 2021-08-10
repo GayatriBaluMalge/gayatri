@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#operations").click(function () {
+                var num1 = parseInt($("#n1").val());
+                var num2 = parseInt($("#n2").val());
+                var value = $("#opera").val();
+                var c;
+                if (value == '+') {
+                    c = num1 + num2;
+                    $("#result").val(c);
+                }
+                if (value == '-') {
+                    c = num1 - num2;
+                    $("#result").val(c);
+                }
+                if (value == '/') {
+                    if (num2 == 0) {
+                        $("#result").val("Not Defined");
+                    }
+                    else
+                        c = num1 / num2;
+                    $("#result").val(c);
+                }
+
+                if (value == '*') {
+                    c = num1 * num2;
+                    $("#result").val(c);
+                }
+            });
+        });
+    </script>
+</head>
+<body style="background-color:bisque">
+    
+                   <div>
+                        <label>Num1</label>
+                        <input type="text" id="n1" />
+                    </div>
+                    <br />
+                    <div>
+                        <label>Num2</label>
+                        <input type="text" id="n2" />
+                    </div>
+                    <br />
+                    <div>
+                        <select id="opera">
+                            <option value="+">Addition</option>
+                            <option value="-">Subtraction</option>
+                            <option value="/">Division</option>
+                            <option value="*">Multiplication</option>
+                        </select>
+                    </div>
+                    <br />
+                    <button class="btn btn-success" id="operations">Submit</button>
+                    <br />
+                    <label> Result </label>
+                    <input type="text" id="result" />
+
+   
+        </body >
+        </html >
+
+
+
+
+
+
+
+
