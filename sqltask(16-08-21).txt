@@ -1,0 +1,80 @@
+use task
+create table Customer(CustomerId int ,
+CustName varchar(12),
+City	varchar(12),
+Email	varchar(30),
+Phone varchar(10) 
+constraint pk_custid primary key (CustomerId)
+);
+insert into Customer values(1,'gayatri','Amravati','gayu@gmail.com','8765432123');
+insert into Customer values(2,'jagruti','nagpur','jagu@gmail.com','9876592123');
+insert into Customer values(3,'mayuri','pune','mayu@gmail.com','9878432123');
+insert into Customer values(4,'sakshi','mumbai','sakshi@gmail.com','8087342567');
+
+select *from Customer
+
+create table Product
+(
+  ProductCode INT IDENTITY(1,1),
+   ProductName VARCHAR(50) ,
+   Price DECIMAL(18,2)
+   constraint pk_code primary key(ProductCode)
+);
+select *from Product;
+
+insert into Product values('soup',30.00);
+insert into Product values('handwash',75.12);
+insert into Product values('paste',35.00);
+insert into Product values('shampoo',105.10);
+
+create table orders(OrderId int,
+CustomerID int ,
+OrderDate date
+constraint pk_id primary key(OrderId),
+constraint fk_sno foreign key(CustomerID) references Customer(CustomerID)
+);
+
+insert into orders values(101,1, getdate());
+insert into orders values(102,2, '2014-06-09');
+insert into orders values(103,3, '1998-02-09');
+insert into orders values(104,4, '2000-08-13');
+insert into orders values(105,2, '2014-02-09');
+
+select *from orders
+
+create table OredrItems(
+Tno	int,
+Orderid	int,
+ProductCode int,
+Quantity int,
+constraint fk_id foreign key (Orderid) references orders(OrderId),
+constraint fk_code foreign key (ProductCode) references Product(ProductCode)
+);
+insert into OredrItems values(01,101,1,20)
+insert into OredrItems values(02,103,2,30)
+insert into OredrItems values(03,104,3,50)
+insert into OredrItems values(04,102,4,90)
+delete from OredrItems where Tno=2;
+select *from OredrItems
+
+select cus.CustomerId, CustName,ord.OrderId,oi.Orderid,pro.ProductCode,ord.CustomerID
+from Customer cus join orders ord on Cus.CustomerId=ord.CustomerID
+ join Product pro  on pro.ProductCode=cus.CustomerId
+ join OredrItems oi on ord.OrderId=oi.Orderid;
+ 
+ select oi.orderId, cus.CustomerID , od.OrderDate,oi.ProductCode,oi.Quantity,pro.Price
+ from OredrItems oi
+ join orders od on oi.Orderid=od.OrderId
+ join Customer cus on cus.CustomerId=od.CustomerID
+ join Product pro on pro.ProductCode=oi.ProductCode 
+
+
+ select od.Orderid,cus.CustomerID,count(cus.CustomerID),od.OrderDate,sum(pro.Price)
+ from orders od
+ join OredrItems oi 
+ on oi.Orderid=od.OrderId
+ join Customer cus
+ on cus.CustomerId=od.CustomerID
+ join Product pro on
+ pro.ProductCode=oi.ProductCode
+ group by od.OrderId,cus.CustomerId,od.OrderDate
