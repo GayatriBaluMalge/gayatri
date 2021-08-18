@@ -1,0 +1,14 @@
+create table CANDIDATE(
+  Ccode 	Int , 	 
+  Name 	Char(20), 	 
+  DOJ 	Date )
+  
+insert into CANDIDATE values ( 	1001 ,'S.Raman' ,'12-jun-97'); 
+insert into CANDIDATE values ( 	1002 ,'M.Sushil' ,'12-nov-97'); 
+insert into CANDIDATE values ( 	1003 ,'MohanYes' ,'30-july-97'); 
+
+select *from CANDIDATE
+
+update CANDIDATE set Name= 'R.Krishnan' where Ccode=1001;
+
+drop table CANDIDATE;

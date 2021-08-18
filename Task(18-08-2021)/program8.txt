@@ -1,0 +1,25 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="program8.aspx.cs" Inherits="Task18.program8" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999966" BorderStyle="Inset" BorderWidth="10px" CellPadding="1" CellSpacing="4" FirstDayOfWeek="Saturday" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#996600" Height="300px" NextPrevFormat="FullMonth" SelectionMode="DayWeekMonth" Width="500px">
+            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+            <NextPrevStyle BackColor="White" Font-Bold="True" VerticalAlign="Bottom" />
+            <OtherMonthDayStyle BackColor="#999966" ForeColor="#808080" />
+            <SelectedDayStyle BackColor="#0066FF" Font-Bold="True" ForeColor="#0066FF" />
+            <SelectorStyle BackColor="Lime" />
+            <TitleStyle BackColor="#009933" Font-Bold="True" />
+            <TodayDayStyle BackColor="#3366FF" ForeColor="Black" />
+            <WeekendDayStyle BackColor="#FFFFCC" />
+        </asp:Calendar>
+    </form>
+</body>
+</html>
