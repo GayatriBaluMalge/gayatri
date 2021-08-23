@@ -1,0 +1,36 @@
+@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Roll No</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>City</td>
+                <td>Email</td>
+                <td>Password</td>
+                <td>Gender</td>
+            </tr>
+        </thead>
+        @foreach(DataRow dr in Model.Rows)
+            {
+    <tr>
+        <td>@dr["RollNo"].ToString()</td>
+        <td>@dr["FName"].ToString()</td>
+        <td>@dr["LName"].ToString()</td>
+        <td>@dr["City"].ToString()</td>
+        <td>@dr["Email"].ToString()</td>
+        <td>@dr["Password"].ToString()</td>
+        <td>@dr["Gender"].ToString()</td>
+        <td>@Html.ActionLink("Edit","Edit",new { RollNo = dr["RollNo"].ToString() })</td>
+    </tr>
+            }
+    </table>
+</body>

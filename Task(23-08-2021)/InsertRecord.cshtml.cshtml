@@ -1,0 +1,23 @@
+
+@{
+    ViewBag.Title = "InsertRecord";
+}
+
+<h2>InsertRecord</h2>
+
+<body>
+
+    <form id="frRecord" method="post" action=@Url.Action("InsertRecords")>
+        Roll No:<input tye="text" name="txtrollno" /><br />
+        First Name:<input tye="text" name="txtfname" /><br />
+        Last Name :<input tye="text" name="txtlname" /><br />
+        City :<input tye="text" name="txtcity" /><br />
+        Email:<input tye="text" name="txtemail" /><br />
+        Password<input tye="text" name="txtpassword" /><br />
+        Gender :<input tye="text" name="txtgender" /><br />
+
+        <input type="submit" value="Submit" name="action" />
+        <input type="submit" value="Cancel" name="action" />
+
+    </form>
+</body>

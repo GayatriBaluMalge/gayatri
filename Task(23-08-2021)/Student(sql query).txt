@@ -1,0 +1,12 @@
+select *from tbl_CustomerData
+use RegistrationDB
+create table Student(RollNo int,
+ FName varchar(20),
+ LName varchar(20),
+ City varchar(20),
+ Email varchar(20),
+ Password varchar(10));
+
+ alter  table Student add Gender varchar(10);
+
+ select *from Student
