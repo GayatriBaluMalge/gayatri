@@ -1,0 +1,67 @@
+
+@{
+    ViewBag.Title = "Employee";
+}
+<style>
+    /*img{
+        width:300px;
+        height:300px;
+    }*/
+    body{
+        background-color:cornsilk;
+    }
+    label {
+        /*display: inline-block;
+        width: 100px;*/
+        text-align: left;
+    }
+    show{
+        text-align:right;
+    }
+  
+</style>
+<h2>Enter Employee Details</h2>
+<body>
+    <form id="frEmployee" method="post" action=@Url.Action("InsertEmployee")>
+        <img src="~/employee.jpg" />"
+        <table border="0">
+            <tr>
+                <td align="left"><b>EmployeeID</b></td>
+                <td align="right"><input type="text" name="txtEmployeeID" /></td>
+            </tr>
+            <tr>
+                <td align="left"> <label><b>EmployeeName</b></label></td>
+                <td align="right"><input tye="text" name="txtEmployeeName" /></td>
+            </tr>
+            <tr>
+                <td align="left"><label><b>Age</b></label></td>
+                <td align="right"><input tye="text" name="txtAge" /></td>
+                <br />
+            </tr>
+            <tr>
+                <td align="left"><label><b>Location</b></label></td>
+                <td align="right"> <input tye="text" name="txtLocation" /></td>
+                <br />
+            </tr>
+            <tr>
+                <td align="left"> <label><b>Phone</b></label></td>
+                <td align="right"><input tye="text" name="txtPhone" /></td>
+                <br />
+            </tr>
+            <tr>
+                <td align="left"><label><b>VehicleID</b></label></td>
+                <td align="right"> <input tye="text" name="txtVehicleID" /></td>
+                <br />
+            </tr>
+
+            @*<input type="submit" value="Submit" name="action" />
+            <input type="submit" value="Cancle" name="action" />*@
+
+        </table>
+      
+            <input type="submit" value="Submit" name="action" /><vr/>
+            <input type="submit" value="Cancle" name="action" />
+       
+    </form>
+</body>
+

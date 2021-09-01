@@ -1,0 +1,87 @@
+@*@{
+            ViewBag.Title = "Login";
+        }
+
+    <style>
+
+    body{
+        background-image:url(images/login.jpeg);
+
+    }
+    </style>
+        <body>
+
+                    <form id=" frmlogin" method="post" action="@Url.Action("Validate")">
+
+                            <label>Admin Login</label>
+
+                             <div>
+                                    UserName:<input tye="text" name="txtUserName" placeholder="Enter UserName" required alert("enter username") /><br />
+                                    Password:<input tye="pwd" name="txtPassword" placeholder="Enter Password" required /><br />
+                                    <input type="submit" value="Submit" name="action" />
+
+                                </div>
+
+
+                    </form>
+
+        </body>*@
+
+
+<html>
+<head>
+    <title>Login Form</title>
+    @*<link rel="stylesheet" type="text/css" href="~/Views/Transport/Style.css">*@
+
+    <style>
+        fieldset {
+            font-size: 14px;
+            padding: 5px;
+            width: 500px;
+            line-height: 1.8;
+            margin: 0 auto;
+          background-color:lightcyan;
+        }
+        form {
+            width: 100%;
+
+
+            
+        }
+        body{
+            background-color:white;
+        }
+        
+    </style>
+</head>
+<body style="background-image: url('../../login1.jpeg'); ">
+<div>
+        <fieldset style="width:300px">
+            <center> <h2> Admin Login </h2><br></center>
+            <div class="login">
+                <form id="frmlogin" method="post" action="@Url.Action("Validate")">
+                    <label>
+                        <b>
+                            UserName
+                        </b>
+                    </label>
+                    <input type="text" name="txtUserName" id="Uname"  text-align:right placeholder="Username">
+                    <br><br>
+                    <label>
+                        <b>
+                            Password
+                        </b>
+                    </label>
+                    <input type="Password" name="txtPassword" id="Pass"  text-align:right placeholder="Password">
+                    <br><br>
+                        <center> <input type="submit" value="Submit" name="action" /></center>
+
+
+                </form>
+            </div>
+        </fieldset>
+      
+</body>
+</html>
+
+

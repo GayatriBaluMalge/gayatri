@@ -1,0 +1,109 @@
+@model Transportproject.Models.Vehicle
+@{
+    ViewBag.Title = "Vehicle";
+}
+
+<h2> Enter Vehicle Details</h2>
+
+<html>
+<head>
+    @*<script src="~/Scripts/jquery-3.6.0.min.js"></script>*@
+
+    <style>
+        body {
+            background-image: url('vehicle.jpg');
+            margin: 0;
+        }
+    </style>
+</head>
+
+   <body>
+       <form id="frEmployee" method="post" action=@Url.Action("VehicleInsert")>
+
+           @*<form id="frEmployee">*@
+           @*@Html.BeginForm("VehicleInsert", "Trasport", FormMethod.Post){*@
+           <br />
+           <div>
+               <img src="~/vehicleimage.jpg" width="300" height="200" /><br />
+               <table>
+                   <tr>
+                       <td align="left"><b>VehicleID</b></td>
+                       <td align="right"><input type="text" name="txtVehicleID" /></td>
+                       @*<label><b> VehicleID <input type="text" name="txtVehicleID" /></b></label>
+        <br />*@
+                   </tr>
+                   <tr>
+                       <td align="left"><b>VehicleNumber</b></td>
+                       <td align="right"><input type="text" name="txtVehicleNumber" /></td>
+                   </tr>
+                   @*<label><b> VehicleID <input type="text" name="txtVehicleID" /></b></label>
+                   <br />
+                   <label><b> VehicalNumber <input type="text" name="txtVehicleNumber" /></b></label>*@
+
+                   @*<br />*@
+               <tr>
+                   <td align="left"><b>TotalCapacity</b></td>
+                   <td align="right"><input type="text" name="txtTotalCapacity" /></td>
+               </tr>
+                   @*<label><b> TotalCapacity <input type="text" name="txtTotalCapacity" /></b></label>*@
+
+                   @*<br />*@
+               <tr>
+                   <td align="left"><b>Capacity</b></td>
+                   <td align="right"><input type="text" name="txtCapacity" /></td>
+               </tr>
+                   @*<label><b> Capacity:<input type="text" text-align:right name="txtCapacity" /></b></label>
+
+                   <br />*@
+               <tr>
+                   <td align="left"><b>AvailableSeats</b></td>
+                   <td align="right"><input type="text" name="txtAvailableSeats" /></td>
+               </tr>
+
+                   @*<label><b>  AvailableSeats: <input type="text" name="txtAvailableSeats" /></b></label>
+
+                   <br />*@
+               <tr>
+                   <td align="left"><b>Operable</b></td>
+                   <td align="right"><input type="text" name="txtOperable" /></td>
+               </tr>
+                   @*<label><b>Operable <input type="text" name="txtOperable" /></b></label>
+
+                   <br />
+           </div>*@
+
+
+           </table>
+           <input type="submit" value="Submit" name="action" />
+           <input type="submit" value="Cancel" name="action" />
+
+       </form>
+    
+</body>
+</html>
+
+@*<script>
+        function Calculate() {
+
+            var TotalCapacity = parseInt(document.getElementById("TCapacity").value);
+            var Capacity = parseInt(document.getElementsById("Capacity").value);
+            var AvailableSeats = TotalCapacity - Capacity;
+            /*  if (!isNaN(AvailableSeats)) {*/
+            document.getElementById("Available").innerHTML = AvailableSeats;
+            alert(TotalCapacity)
+            /*  }*/
+        }
+    </script>*@
+
+@*<script type="text/javascript">
+        $(document).ready(function () {
+            $("#CalculateCapacity").click(function () {
+                var txtTotalCapacity = parseInt($("#TotalCapacity").val());
+                var txtCapacity = parseInt($("#Capacity").val());
+                $("#show").text(txtTotalCapacity - txtCapacity);
+            });
+        });
+
+    </script>*@
+
+

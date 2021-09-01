@@ -1,0 +1,54 @@
+@model Transportproject.Models.Route
+@{
+    ViewBag.Title = "Route";
+}
+<style>
+   /* label{
+        text-align:left;
+    }
+    div{
+        text-align:right;
+    }*/
+</style>
+<body style="background-image: url('../../ROOT1.jpg');">
+    <h2>Add RouteDetails</h2>
+    <form id="frmroute" method="post" style="text-align:left" action=@Url.Action("routeinsert")>
+        <table>
+            <tr>
+                <td align="left"><b>RootNumber</b></td>
+                <td align="right"><input type="text" name="txtRootNumber" /></td>
+                @*<td align="left"  <label><b> RootNumber  <input type="text" name="txtRootNumber" /><br /></b></label>*@
+            </tr>
+            @*<label><b> RootNumber  <input type="text" name="txtRootNumber" /><br /></b></label>*@
+            <tr>
+                <td align="left"><b>VehicleNumber</b></td>
+                <td align="right"><input type="text" name="txtVehicleNumber" /></td>
+            </tr>
+            @*<label><b> VehicleNumber <input type="text" name="txtVehicleNumber" /><br /></b></label>*@
+            <tr>
+                <td align="left"><b>Stop1</b></td>
+                <td align="right"><input type="text" name="txtStop1" /></td>
+            </tr>
+            @*<label><b>Stop1 <input type="text" name="txtStop1" /><br /></b></label>*@
+            <tr>
+                <td align="left"><b>Stop2</b></td>
+                <td align="right"><input type="text" name="txtStop2" /></td>
+            </tr>
+            @*<label><b> Stop2 <input type="text" name="txtStop2" /><br /></b></label>*@
+
+            <tr>
+                <td align="left"><b>Stop3</b></td>
+                <td align="right"><input type="text" name="txtStop3" /></td>
+            </tr>
+            @*<label><b>Stop3 <input type="text" name="txtStop3" /></b></label>
+            <br />*@
+
+
+            @*<input type="submit" value="Submit" name="action" />
+        <input type="submit" value="Cancel" name="action" />*@
+
+        </table>
+        <input type="submit" value="Submit" name="action" />
+        <input type="submit" value="Cancel" name="action" />
+    </form>
+</body>

@@ -1,0 +1,45 @@
+@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "AllocateVehicle1";
+}
+
+<h2>AllocateVehicle Details</h2>
+
+<body style="background-color:skyblue">
+    <table border="1">
+        <thead>
+            <tr>
+                <td>VehicleID</td>
+                <td>VehicleNumber</td>
+                <td>VehicleName</td>
+
+
+
+
+
+            </tr>
+        </thead>
+        @foreach (DataRow dr in Model.Rows)
+        {
+    <tr>
+        <td> @dr["VehicleID"].ToString()</td>
+        <td> @dr["VehicleNumber"].ToString()</td>
+        <td>@dr["VehicleName"].ToString()</td>
+
+
+        @*<td>@Html.ActionLink("Edit", "Edit", new { Mno = dr["Mno"].ToString() })</td>
+        <td>@Html.ActionLink("Delete", "Delete", new { Mno = dr["Mno"].ToString() })</td>*@
+
+    
+     
+
+    </tr>
+        }
+    </table>
+    <form>
+        <input type="submit" value="Previous" name="Previous" /></hr>
+        <input type="submit" value="Next" name="Next" />
+    </form>
+</body>

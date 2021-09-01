@@ -1,0 +1,20 @@
+
+@{
+    ViewBag.Title = "UpdateVehicle";
+}
+
+<h2>UpdateVehicle Details</h2>
+
+<body>
+    <form id="frmEdit" method="post" action=@Url.Action("UpdateVehicles")>
+        VehicleID:<input tye="text" name="txtVehicleID" value="@Model.Rows[0]["VehicleID"]"/><br/>
+        VehicleNumber:<input tye="text" name="txtVehicleNumber" value="@Model.Rows[0]["VehicleNumber"] " /><br />
+        TotalCapacity:<input tye="text" name="txtTotalCapacity" value="@Model.Rows[0]["TotalCapacity"]" /><br />
+        Capacity:<input tye="text" name="txtCapacity" value="@Model.Rows[0]["Capacity"]" /><br />
+        AvailableSeats:<input type="text" name="txtAvailableSeats" value="@Model.Rows[0]["AvailableSeats"]" /><br />
+        Operable:<input tye="text" name="txtOperable" value="@Model.Rows[0]["Operable"]" /><br />
+       
+        <input type="submit" value="Submit" name="action" />
+        <input type="submit" value="Cancel" name="action" />
+    </form>
+</body>

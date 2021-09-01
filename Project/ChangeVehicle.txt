@@ -1,0 +1,19 @@
+
+@{
+    ViewBag.Title = "ChangeVehicle";
+}
+
+<h2>ChangeVehicle Status</h2>
+<body style="background-image: url('../../vehicleimage2.jpg');">
+    <form id="frEmployee" method="post" action=@Url.Action("vehiclestatus")>
+        <select id="dropdown" name="txtdropdown">
+            <option value="Status">Status</option>
+        <br/>
+
+            <option value="Active" name="txtdropdown" id="Active">Active</option>
+            <option value="Inactive" name="txtdropdown" id="Inactive">Inactive</option>
+        </select></br>
+        <br/>
+        <input type="submit" value="Submit" name="action" />
+    </form>
+</body>

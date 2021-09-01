@@ -1,0 +1,48 @@
+@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+
+    @{
+        ViewBag.Title = "Vehicle1";
+    }
+
+    <h2>Vehicle Details </h2>
+    <body style="background-color:darkseagreen">
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>VehicleID</td>
+                    <td> VehicleNumber</td>
+                    <td>TotalCapacity</td>
+                    <td>Capacity</td>
+                    <td>AvailableSeats</td>
+                    <td>Operable</td>
+
+
+
+                </tr>
+            </thead>
+            @foreach (DataRow dr in Model.Rows)
+            {
+                <tr>
+                    <td>@dr["VehicleID"].ToString()</td>
+                    <td> @dr["VehicleNumber"].ToString()</td>
+                    <td>@dr["TotalCapacity"].ToString()</td>
+                    <td>@dr["Capacity"].ToString()</td>
+                    <td>@dr["AvailableSeats"].ToString()</td>
+                    <td>@dr["Operable"].ToString()</td>
+                   
+                    <td>@Html.ActionLink("Edit", "UpdateVehicle", new { VehicleID = dr["VehicleID"].ToString() })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { VehicleID = dr["VehicleID"].ToString() })</td>
+
+                </tr>
+            }
+        </table>
+        <form>
+
+            <input type="submit" value="Previous" name="Previous" /></hr></hr>
+            <input type="submit" value="Next" name="Next" />
+        </form>
+     
+    </body>
+

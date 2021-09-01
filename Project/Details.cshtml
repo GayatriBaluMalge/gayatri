@@ -1,0 +1,48 @@
+@using System.Data.SqlClient
+@using System.Data
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2> All Details</h2>
+
+<body style="background-image: url('../../details.jpg');">
+    <table border="1">
+        <thead>
+            <tr>
+                <td>EmployeeID</td>
+                <td>EmployeeName</td>
+                <td>Age</td>
+                <td>Location</td>
+                <td>Phone</td>
+                <td>VehicleID</td>
+                @*<td>VehicleName</td>*@
+                <td>VehicleNumber</td>
+                @*<td>Stop1</td>
+                <td>Stop2</td>
+                <td>Stop3</td>*@
+            </tr>
+
+        </thead>
+        @foreach (DataRow dr in Model.Rows)
+        {
+            <tr>
+                <td> @dr["EmployeeID"].ToString()</td>
+                <td> @dr["EmployeeName"].ToString()</td>
+                <td>@dr["Age"].ToString()</td>
+                <td>@dr["Location"].ToString()</td>
+                <td>@dr["Phone"].ToString()</td>
+                <td>@dr["VehicleID"].ToString()</td>
+                <td>@dr["VehicleNumber"].ToString()</td>
+                @*<td>@dr["Stop1"].ToString()</td>
+                <td>@dr["Stop2"].ToString()</td>
+                <td>@dr["Stop3"].ToString()</td>*@
+                @*<td>@Html.ActionLink("Next", "AllDetails", new { EmployeeID = dr["EmployeeID"].ToString() })</td>*@
+            </tr>
+            
+        }
+
+    </table>
+   
+    </body>

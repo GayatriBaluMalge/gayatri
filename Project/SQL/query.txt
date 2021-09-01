@@ -1,0 +1,35 @@
+create table Vehicle(VehicleNumber varchar(10),
+Capacity int ,AvailableSeats int,Operable varchar(10));
+
+select *from Vehicle;
+
+select *from tbl_login
+
+alter table Vehicle add TotalCapacity int;
+
+create table Route(RootNumber int identity(1,3),
+VehicleNumber int ,Stop1 varchar(20),Stop2 varchar(20),
+stop3 varchar(20));
+
+select *from Route
+
+select *from Route
+delete from Route where VehicleNumber=0;
+
+select *from AllocateVehicle
+delete from AllocateVehicle where VehicleNumber=123;
+
+create table tbl_Employee(EmployeeID int,EmployeeName varchar(20),
+Age int,Location varchar,Phone varchar,VehicleID varchar,
+constraint pk_VID primary key (EmployeeID)
+)
+
+create table Vehicle(VehicleID varchar,VehicleNumber varchar,TotalCapacity int,
+Capacity int,AvailableSeats int,Operable varchar(10),
+constraint pk_ID primary key(VehicleID))
+
+
+
+create table AllocateVehicle(VehicleID varchar,VehicleNumber varchar,VehicleName varchar,
+constraint fk_VID foreign key(VehicleID) references Vehicle(VehicleID));
+

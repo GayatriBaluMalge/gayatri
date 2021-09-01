@@ -1,0 +1,36 @@
+@model Transportproject.Models.AllocateVehicle
+@{
+    ViewBag.Title = "AllocateVehicle";
+}
+
+<h2>AllocateVehicle</h2>
+<body style="background-color:silver">
+    <form id="frallocatevehicle" method="post" action=@Url.Action("allocateinsertvehicle")>
+        <table>
+            <tr>
+                <td align="left"><b>VehicleID</b></td>
+                <td align="right"><input type="text" name="txtVehicleID" /></td>
+            </tr>
+            @*VehicleID
+        <input type="text" name="txtVehicleID" />
+        <br />*@
+            <tr>
+                <td align="left"><b>VehicleNumber</b></td>
+                <td align="right"><input type="text" name="txtVehicleNumber" /></td>
+            </tr>
+            @*VehicleNumber
+        <input tye="text" name="txtVehicleNumber" />
+        <br />*@
+            <tr>
+                <td align="left"><b>VehicleName</b></td>
+                <td align="right"><input type="text" name="txtVehicleName" /></td>
+            </tr>
+            @*VehicleName
+            <input tye="text" name="txtVehicleName" />
+            <br />*@
+        </table>
+        <input type="submit" value="Submit" name="action" />
+        <input type="submit" value="Cancel" name="action" />
+    </form>
+
+</body>

@@ -1,0 +1,46 @@
+@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Route1";
+}
+
+<h2>Route Details </h2>
+
+<body style="background-color:powderblue">
+    <table border="1">
+        <thead>
+            <tr>
+                <td>RootNumber</td>
+                <td>VehicleNumber</td>
+                <td>Stop1</td>
+                <td>Stop2</td>
+                <td>Stop3</td>
+
+
+
+
+            </tr>
+        </thead>
+        @foreach (DataRow dr in Model.Rows)
+        {
+            <tr>
+                <td> @dr["RootNumber"].ToString()</td>
+                <td>@dr["VehicleNumber"].ToString()</td>
+                <td>@dr["Stop1"].ToString()</td>
+                <td>@dr["Stop2"].ToString()</td>
+                <td>@dr["Stop3"].ToString()</td>
+              
+                @*<td>@Html.ActionLink("Edit", "Edit", new { Mno = dr["Mno"].ToString() })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { Mno = dr["Mno"].ToString() })</td>*@
+
+
+
+            </tr>
+        }
+    </table>
+    <form>
+        <input type="submit" value="Previous" name="Previous" /></hr>
+        <input type="submit" value="Next" name="Next" />
+    </form>
+</body>

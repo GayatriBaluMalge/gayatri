@@ -1,0 +1,55 @@
+@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Home";
+}
+<h2>Employee Details </h2>
+
+
+<body  style="background-color:darkgray"@*style="background-image: url('../../employee1.png');"*@>
+    <fieldset style="width:300px">
+        
+    <table border="1" cellspacing="1" cellpadding="1">
+    <thead>
+        <tr>
+            <td>EmployeeID</td>
+            <td>EmployeeName</td>
+            <td>Age</td>
+            <td>Location</td>
+            <td>Phone</td>
+            <td>VehicleID</td>
+
+
+
+        </tr>
+    </thead>
+    @foreach (DataRow dr in Model.Rows)
+    {
+        <tr>
+            <td> @dr["EmployeeID"].ToString()</td>
+            <td>@dr["EmployeeName"].ToString()</td>
+            <td>@dr["Age"].ToString()</td>
+            <td>@dr["Location"].ToString()</td>
+            <td>@dr["Phone"].ToString()</td>
+            <td>@dr["VehicleID"].ToString()</td>
+            @*<td>@Html.ActionLink("Edit", "Edit", new { Mno = dr["Mno"].ToString() })</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { Mno = dr["Mno"].ToString() })</td>*@
+            <td>@Html.ActionLink("Edit", "UpdateEmployee", new { EmployeeID = dr["EmployeeID"].ToString() })</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { EmployeeID = dr["EmployeeID"].ToString() })</td>
+
+
+        </tr>
+
+    }
+</center>
+        </table>
+        <form>
+            <center>
+                <input type="submit" value="Previous" name="Previous" /></hr>
+                <input type="submit" value="Next" name="Next" />
+            </center>
+        </form>
+    </fieldset>
+</body>
+

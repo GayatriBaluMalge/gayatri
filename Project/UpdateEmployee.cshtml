@@ -1,0 +1,21 @@
+@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "UpdateEmployee";
+}
+
+<h2>UpdateEmployee</h2>
+
+<body>
+    <form id="frmEdit" method="post" action=@Url.Action("UpdateEmployees")>
+        EmployeeID:<input tye="text" name="txtEmployeeID" value="@Model.Rows[0]["EmployeeID"] " /><br />
+        EmployeeName:<input tye="text" name="txtEmployeeName" value="@Model.Rows[0]["EmployeeName"]" /><br />
+        Age:<input tye="text" name="txtAge" value="@Model.Rows[0]["Age"]" /><br />
+        Location:<input type="text" name="txtLocation" value="@Model.Rows[0]["Location"]" /><br />
+        Phone:<input tye="text" name="txtPhone" value="@Model.Rows[0]["Phone"]" /><br />
+        VehicleID:<input tye="text" name="txtVehicle" value="@Model.Rows[0]["VehicleID"]" /><br />
+        <input type="submit" value="Submit" name="action" />
+        <input type="submit" value="Cancel" name="action" />
+    </form>
+</body>
